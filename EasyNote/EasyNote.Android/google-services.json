@@ -1,0 +1,39 @@
+{ 
+  "project_info": {
+    "project_number": "542364334757",
+    "project_id": "notas-a44be",
+    "storage_bucket": "notas-a44be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542364334757:android:1a9a3a96327d4543256b4c",
+        "android_client_info": {
+          "package_name": "com.companyname.easynote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "542364334757-kmegu0kc0vofehlngcujqroda53fic38.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwrN0LB8yGTO1zvEpa2xRTFZJ_bmm3_V4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "542364334757-kmegu0kc0vofehlngcujqroda53fic38.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

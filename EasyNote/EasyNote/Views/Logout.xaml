@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyNote.Views.Logout">
+    
+    <ContentPage.Content>
+
+        <StackLayout>
+            <Label Text="FastEasyNote" TextColor="Blue" FontSize="30" FontAttributes="Italic" HorizontalTextAlignment="Center"/>
+
+            <Image Source="contents.jpg" HeightRequest="190" WidthRequest="250"/>
+            <Image Source="paper.png" HeightRequest="100" WidthRequest="100"/>
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                
+
+                <Label      Text = "Esperamos que regreses pronto."
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="Center"
+                            FontSize = "Large" Margin = "2,0,0,0"
+                            VerticalOptions = "StartAndExpand"
+                            TextColor = "#0d0d0d" />
+
+                <Label    Text = "Llego el momento que menos esperabamos, tennos en cuenta y esperamos que vuelvas a ingresar." 
+                          HorizontalTextAlignment = "Center" 
+                          FontSize = "Title"
+                          Margin = "2,50,0,0" 
+                          HorizontalOptions = "Start" 
+                          VerticalOptions = "Center" 
+                          TextColor = "Black" />
+            </StackLayout>
+
+
+            <Button Margin="100,0,100,0"
+                            VerticalOptions="CenterAndExpand"
+                            Text="Cerrar Sesión"
+                            Font="Montserrat-Medium.otf"
+                            FontSize="{OnPlatform Android=15}"
+                            BackgroundColor="Red"
+                            TextColor="White"
+                            BorderWidth="4"
+                            CornerRadius="15"
+                            WidthRequest="30"
+                            HeightRequest="50"
+                            Command="{Binding LoginCommand}"
+                            IsEnabled="{Binding IsEnabledTxt}"
+                            Clicked="Button_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

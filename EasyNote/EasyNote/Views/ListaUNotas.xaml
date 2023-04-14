@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyNote.Views.ListaUNotas"
+             Title="Foto Notas">
+
+    
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Agregar foto Nota"  Clicked="ToolbarItem_Clicked_1" Command="{Binding AddItemCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <StackLayout  Margin="0,20" Padding="0,0,0,0">
+            <ImageButton Source="contents.png" HeightRequest="100" BackgroundColor="White" x:Name="btnagregarfotonota" Clicked="btnagregarfotonota_Clicked"/>
+        </StackLayout>
+
+
+        <ListView x:Name="listaNotas" SelectionMode="Single" ItemsSource="{Binding UNotas}" ItemTapped="listaNotas_ItemTapped" RowHeight="80">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <Grid Padding="10,0,10,0" Margin="0,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+
+                            </Grid.RowDefinitions>
+                            
+                            <Label x:Name="lblnota" Grid.Row="0" Grid.Column="0" Text="{Binding notasId}"
+                                       FontAttributes="Bold" TextTransform="Uppercase" TextColor="black"/>
+                            
+                            <Label Grid.Row="1" Grid.Column="0" Text="{Binding notas_Descrip}"
+                                       FontAttributes="Bold" LineBreakMode="TailTruncation" TextColor="blue"/>
+                            
+                            <Label Grid.Row="2" Grid.Column="0" Text="{Binding notas_correo}"
+                                       FontAttributes="Bold" LineBreakMode="TailTruncation" TextColor="Red" Margin="0,0,0,0"/>
+
+                            
+                        </Grid>
+
+                       
+
+                    </ViewCell>
+                    
+                </DataTemplate>
+                
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+    
+</ContentPage>

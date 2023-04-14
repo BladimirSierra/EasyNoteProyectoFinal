@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyNote.Views.NotaView"
+             NavigationPage.HasNavigationBar="False">
+    
+
+    <ContentPage.ToolbarItems >
+
+
+        <ToolbarItem Icon="refresh.png" 
+                     Priority="4" 
+                     Order="Primary" 
+                     Clicked="ToolbarItem_Clicked_4"/>
+
+        <ToolbarItem Text="Compartir" Priority="2" Order="Secondary" Clicked="ToolbarItem_Clicked1"/>
+       
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        
+        <ScrollView>
+            
+            <StackLayout VerticalOptions="Start" HorizontalOptions="CenterAndExpand" >
+                <Image Source="paper.png" HeightRequest="100" WidthRequest="200"/>
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition  />
+
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Grid.Row="0" HorizontalOptions="FillAndExpand">
+                        <Label Text="Titulo de Notas"
+                               TextColor="Black" 
+                               FontSize="Medium" 
+                               FontAttributes="Bold"/>
+                        
+                        <Entry x:Name="txtidnotas" 
+                               Placeholder="Introducir titulo" PlaceholderColor="Black"        
+                                 FontSize="{OnPlatform Android=20,iOS=23}" 
+                               WidthRequest="300"
+                               TextColor="Black"
+                            Text="{Binding notasId}"
+                               />
+
+                        <Label  x:Name="downloadLink" IsVisible="false"/>
+                        <Label x:Name="lblcorreo" IsVisible="false"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1" HorizontalOptions="Fill" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical"  >
+                        <Label
+                   
+                    FontSize="{OnPlatform Android=13}"
+                    TextColor="Black"
+                            
+                    />
+                        <Label Text="Descripcion de nota" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
+                        <Frame
+                    HasShadow="{OnPlatform Android=true,iOS=false}"
+                    Padding="{OnPlatform Android=6,iOS=0}"
+                    CornerRadius="{OnPlatform Android=7}"
+                    >
+
+                            <Editor
+                            PlaceholderColor="Black"
+                            AutoSize="TextChanges"
+                            Completed="Editor_Completed" 
+                            Placeholder="Introduzca la descripcion de su nota"
+                            Keyboard="Text"
+                            MaxLength="1000"
+                            FontSize="{OnPlatform Android=15,iOS=16}"
+                            Text="{Binding notas_Descrip}"
+                            IsEnabled="{Binding IsEnabledTxt}"
+                               x:Name="txtdescri"
+                                TextColor="Black"
+                                
+                            />
+                            
+                        </Frame>
+
+                    </StackLayout>
+                    <!--Text="{Binding tecladoTxt, Mode=TwoWay}"-->
+                    <StackLayout Grid.Row="0" HorizontalOptions="Fill" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical" Margin="15,1,15,30" IsVisible="false">
+                        <Entry x:Name="txtimagen" Text="{Binding notas_Image}" IsVisible="false"/>
+
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="3" HorizontalOptions="Fill" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical" Margin="15,1,15,30" >
+                        <Image
+                            x:Name="image1" Source="{Binding notas_Image}"
+                            Aspect="AspectFit"  HeightRequest="500" WidthRequest="150" 
+                            ></Image>
+                      
+                    </StackLayout>
+                      
+
+                </Grid>
+                <Grid BackgroundColor="gray" Margin="0,0,0,5" Padding="0,10,0,0">
+                    <Grid Margin="0,0,0,0" Grid.Row="0">
+                        <ImageButton Source="guardar.png" HeightRequest="50"  Grid.Column="0" x:Name="btnguardar" Clicked="btnguardar_Clicked" BackgroundColor="Transparent"/>
+                        <ImageButton Source="delete1.png"  HeightRequest="50" x:Name="btndelete" Clicked="btndelete_Clicked" Grid.Column="1" BackgroundColor="Transparent"/>
+                    </Grid>
+                    <Grid Margin="0,0,0,0" Grid.Row="1">
+                        <ImageButton Source="refresh.png" Grid.ColumnSpan="2" x:Name="btncompartir" Clicked="btncompartir_Clicked" BackgroundColor="Transparent"/>
+
+                    </Grid>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

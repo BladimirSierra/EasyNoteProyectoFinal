@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="EasyNote.Views.ItemsPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"   
+             x:Name="BrowseItemsPage"
+             Title="Lista de Notas Guardadas"
+             BackgroundColor="White">
+    
+ 
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+       
+        <Frame 
+            
+            Grid.Row="1"
+            Padding="0,0,0,-5"
+            Margin="100,0,100,0"
+            BackgroundColor="#F1F1F1"
+            CornerRadius="20"
+            HasShadow="False"
+            HorizontalOptions="FillAndExpand"
+            IsClippedToBounds="True">
+                        
+            <SearchBar x:Name="buscar"  
+                   TextChanged="buscar_TextChanged"
+                   Placeholder="Buscar"
+                   Margin="0,0,0,0" />
+
+        </Frame>
+        
+       
+
+        <ListView Grid.Row="3" x:Name="listaNotas" SelectionMode="Single" ItemsSource="{Binding ENotas}" ItemTapped="listaNotas_ItemTapped" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            
+                            
+                          
+                                
+                                <Image
+                                    Grid.RowSpan="2"
+                                    HeightRequest="30"
+                                    Source="note.png"
+                                    WidthRequest="30" />
+                          
+                            <StackLayout
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Orientation="Horizontal">
+                               
+                                <Label
+                                        FontSize="Small"
+                                        HorizontalOptions="EndAndExpand"
+                                        HorizontalTextAlignment="End"
+                                        Text="{Binding Date, StringFormat='{0:hh:mm tt}'}"
+                                        TextColor="Black" />
+
+                            </StackLayout>
+                            
+                            
+                                   <Label 
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    x:Name="lblnota" 
+                                    VerticalOptions="Center"
+                                    Text="{Binding notasId}"
+                                    FontSize="Small"
+                                    LineBreakMode="TailTruncation"
+                                    FontAttributes="Bold" 
+                                    TextTransform="Uppercase"
+                                       TextColor="black"/>
+                                
+                                   <Label 
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    FontSize="12"
+                                    VerticalOptions="Center"
+                                    Text="{Binding notas_Descrip}"   
+                                    FontAttributes="Bold" 
+                                    LineBreakMode="TailTruncation" />
+
+
+                            </Grid>
+                        
+                    </ViewCell>
+                </DataTemplate>         
+             </ListView.ItemTemplate>
+            
+        </ListView>
+       <StackLayout  Margin="0,20" Padding="10,0,0,0">
+            <ImageButton Source="contents.png" HeightRequest="100" BackgroundColor="White" Clicked="ToolbarItem_Clicked_1" Command="{Binding AddItemCommand}"/>
+        </StackLayout>
+    </Grid>
+    
+
+</ContentPage>

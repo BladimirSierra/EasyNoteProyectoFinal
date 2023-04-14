@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyNote.Views.InicioPage"
+             BackgroundColor="White" 
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Grid>
+
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="Auto"/>
+                    
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout HorizontalOptions="Center" Grid.Column="0" Grid.Row="0" Margin="0,30,0,20">
+
+                    <Label Text="Fast note" TextColor="Blue" FontSize="30" FontAttributes="Italic" HorizontalTextAlignment="Center"/>
+
+                    <Image Source="contents.jpg" HeightRequest="190" WidthRequest="250"/>
+                    <Image Source="paper.png" HeightRequest="100" WidthRequest="100"/>
+                </StackLayout>
+
+                <StackLayout Grid.Column="0" Grid.Row="2" HorizontalOptions="Center" Spacing="10">
+                    
+                        <Button Text="Registrarse"
+                                HeightRequest="45" 
+                                WidthRequest="250"  
+                                TextColor="White" 
+                                BackgroundColor="#0191E8" 
+                                FontAttributes="Italic" 
+                                FontSize="20"
+                                CornerRadius="30"
+                                x:Name="RegistroNav" 
+                                Clicked="RegistroNav_Clicked"/>
+                    
+                    
+                        <Button Text="Iniciar Sesión" 
+                                HeightRequest="45" 
+                                WidthRequest="250" 
+                                TextColor="White" 
+                                BackgroundColor="#0191E8" 
+                                FontAttributes="Italic" 
+                                FontSize="20" 
+                                CornerRadius="30"
+                                x:Name="LoginNav" 
+                                Clicked="LoginNav_Clicked"/>
+                   
+
+                    <StackLayout HorizontalOptions="Center" Grid.Column="0" Grid.Row="4">
+                        <Label Text="Soluciones rapidas y sencillas." TextColor="Black" FontSize="15" FontFamily="San" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

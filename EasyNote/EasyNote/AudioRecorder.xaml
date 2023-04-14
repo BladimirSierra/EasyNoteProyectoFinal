@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyNote.AudioRecorder">
+
+    
+    <StackLayout BackgroundColor="white">
+        <Frame BackgroundColor="#2196F3" Padding="0" CornerRadius="0">
+            <Label Text="Notas de Audio" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+
+        <Image Source="paper.jpg" Margin="10,30,20,30" />
+        <Label Text="Descripción" FontSize="Title" Padding="30,10,30,10" TextColor="Black" HorizontalTextAlignment="Center"/>
+        <Entry Placeholder="Ingrese una descripción" Margin="30,0,30,0" x:Name="txtdescripcion" TextColor="Black" PlaceholderColor="Black"/>
+        <Grid Margin="20,0,20,0">
+            <Button Text="Grabar Audio" 
+                    Grid.Column="0" 
+                    x:Name="btnGrabar" 
+                    Clicked="btnGrabar_Clicked"
+                    BackgroundColor="Green"
+                    Margin="10"
+                    CornerRadius="30"/>
+
+            <Button Text="Detener Audio" 
+                    Grid.Column="1" 
+                    x:Name="btnDetener" 
+                    Margin="10"
+                    Clicked="btnDetener_Clicked" 
+                    IsEnabled="False"
+                    BackgroundColor="blue"
+                    CornerRadius="30"
+                    />
+            <Button Text="Listar Audios" 
+                    Grid.Row="1" 
+                    Grid.ColumnSpan="2" 
+                    Margin="10"
+                    x:Name="btnlistarAudio" 
+                    Clicked="btnlistarAudio_Clicked"
+                    BackgroundColor="Purple"
+                    CornerRadius="30"/>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
